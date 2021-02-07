@@ -1,5 +1,6 @@
-.cards-background {
-    background-color:rgba(233, 226, 226,0.7);
+.search-background {
+    background-image: linear-gradient(to bottom, rgb(219, 216, 216), rgb(255, 255, 255));
+    height: 10rem;
 }
 .card {
     width: 17rem;
