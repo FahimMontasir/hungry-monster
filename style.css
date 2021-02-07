@@ -6,3 +6,7 @@
 .card {
     width: 17rem;
 }
+
+.ingredient-card {
+    border: none !important;
+}
