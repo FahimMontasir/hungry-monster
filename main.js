@@ -64,16 +64,44 @@ const renderIngredients = ingredient => {
     const ingredientsSection = document.getElementById('ingredients-area');
     //this messy code is for ingredients validation
     if (ingredient.strIngredient5 === "null" || ingredient.strIngredient5 === "",
-    ingredient.strIngredient6 === "null" || ingredient.strIngredient6 === "",
-    ingredient.strIngredient7 === "null" || ingredient.strIngredient7 === "",
-    ingredient.strIngredient8 === "null" || ingredient.strIngredient8 === "",
-    ingredient.strIngredient9 === "null" || ingredient.strIngredient9 === "",
-    ingredient.strIngredient10 === "null" || ingredient.strIngredient10 === ""){
-    ingredient.strIngredient5 = 'missing';ingredient.strIngredient6 = 'missing';
-    ingredient.strIngredient7 = 'missing';ingredient.strIngredient8 = 'missing';
-    ingredient.strIngredient9 = 'missing';ingredient.strIngredient10 = 'missing';
+        ingredient.strIngredient6 === "null" || ingredient.strIngredient6 === "",
+        ingredient.strIngredient7 === "null" || ingredient.strIngredient7 === "") {
+        ingredientsSection.innerHTML = `
+        <img src="${ingredient.strMealThumb}" class="card-img-top">
+        <div class="card-body">
+        <h5 class="card-title">${ingredient.strMeal}</h5>
+        <h6 class="text-info">Ingredients</h6>
+        <ul type ="square">
+           <li>${ingredient.strIngredient1}</li>
+           <li>${ingredient.strIngredient2}</li>
+           <li>${ingredient.strIngredient3}</li>
+           <li>${ingredient.strIngredient4}</li>
+        </ul>
+        </div>
+        `
     }
-    ingredientsSection.innerHTML = `
+    else if (ingredient.strIngredient8 === "null" || ingredient.strIngredient8 === "",
+        ingredient.strIngredient9 === "null" || ingredient.strIngredient9 === "",
+        ingredient.strIngredient10 === "null" || ingredient.strIngredient10 === "") {
+        ingredientsSection.innerHTML = `
+        <img src="${ingredient.strMealThumb}" class="card-img-top">
+        <div class="card-body">
+        <h5 class="card-title">${ingredient.strMeal}</h5>
+        <h6 class="text-info">Ingredients</h6>
+        <ul type ="square">
+           <li>${ingredient.strIngredient1}</li>
+           <li>${ingredient.strIngredient2}</li>
+           <li>${ingredient.strIngredient3}</li>
+           <li>${ingredient.strIngredient4}</li>
+           <li>${ingredient.strIngredient5}</li>
+           <li>${ingredient.strIngredient6}</li>
+           <li>${ingredient.strIngredient7}</li>
+        </ul>
+        </div>
+        `
+    }
+    else {
+        ingredientsSection.innerHTML = `
     <img src="${ingredient.strMealThumb}" class="card-img-top">
     <div class="card-body">
     <h5 class="card-title">${ingredient.strMeal}</h5>
@@ -92,4 +120,5 @@ const renderIngredients = ingredient => {
     </ul>
     </div>
     `
+    }
 }
